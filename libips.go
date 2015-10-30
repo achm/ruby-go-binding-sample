@@ -9,8 +9,6 @@ import (
 )
 
 func main() {
-	//var err error
-	//search("42.187.128.0")
 }
 
 //export search
@@ -30,7 +28,7 @@ func search(rawIP *C.char) bool {
 func decodeIPRanges() []ip.IPRange {
 	var ipRanges []ip.IPRange
 
-	ipRangesFile, _ := os.Open("./output")
+	ipRangesFile, _ := os.Open("./ips-go")
 	decoder := gob.NewDecoder(ipRangesFile)
 	decoder.Decode(&ipRanges)
 
